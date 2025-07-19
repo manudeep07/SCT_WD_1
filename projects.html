@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Projects</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navigation Menu Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(34, 40, 49, 0.95);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.scrolled {
+      background-color: rgba(0, 173, 181, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #00adb5;
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #eeeeee;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      background-color: #00adb5;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    /* Main Content */
+    .content {
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #222831;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(280px,1fr));
+
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .project-card {
+      background-color: #d2d3d3;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      color: #003b6f;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222831;
+      color: #eeeeee;
+      padding: 20px;
+      text-align: center;
+      margin-top: 100vh;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+    }
+
+    .footer-links li a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+ <nav id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">My Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+  <section class="content">
+    <h2>My Projects</h2>
+    <p>Explore my latest projects, showcasing my skills in web development, design, and more.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3><a href="https://github.com/manudeep07">Secure File Management System</a></h3>
+        <p>Developed a secure file management system that incorporates authentication mechanisms (password-based, two-factor), protection measures (access control, encryption), and detection of common security threats (buffer overflow, malware). Users should be able to perform file operations like read, write, share, and view metadata securely.</p>
+      </div>
+      <div class="project-card">
+        <h3><a href="https://github.com/manudeep07">Collaborative online notepad</a></h3>
+        <p>Developed a Collaborative online notepad where users can edit,share,Collaborative notes seamlessly</p>
+      </div>
+      
+      <div class="project-card">
+        <h3><a href="https://github.com/manudeep07">Travel Companion</a></h3>
+        <p>Travel Companion is a smart AI-powered web app built with Flask that helps travelers with real-time weather updates, currency conversions, and helpful travel advice — all through a friendly chatbot interface. It uses Google Gemini, OpenWeatherMap, and ExchangeRate-API to provide fast and reliable information.</p>
+      </div>
+      <div class="project-card">
+        <h3><a href="https://www.figma.com/proto/DIeJgBctSVmbJUmzXrSwdz/Hostel-Bites?node-id=4-3&t=CIZMarBwnnJ60oez-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A34&starting-point-node-id=40%3A628">Hostel Bites</a></h3>
+        <p>A prototype food solution for hostel students designed using Figma and Design Thinking principles.</p>
+      </div>
+       <div class="project-card">
+        <h3><a href="https://manudeep07.github.io/yt-music-clone/">Youtube Music Clone</a></h3>
+        <p>I made a youtube music clone using html css and java script</p>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 My Portfolio. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scroll Navbar Script -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

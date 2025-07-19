@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Projects</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navigation Menu Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(34, 40, 49, 0.95);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.scrolled {
+      background-color: rgba(0, 173, 181, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      color: #00adb5;
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #eeeeee;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      background-color: #00adb5;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222831;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #393e46;
+    }
+
+    footer {
+      margin-top: 100vh;
+      background-color: #222831;
+      color: #eeeeee;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links li a {
+      color: #00adb5;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">My Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="content">
+  <h2>Contact Me</h2>
+  <p>You can reach out to me through any of the platforms below. I’d love to connect!</p>
+
+  <br /><br />
+
+  <div style="margin-top: 20px; line-height: 2;">
+    <p><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manudeep1000@gmail.com" style="color: #00adb5;">manudeep1000@gmail.com</a></p>
+  </div>
+
+  <br />
+
+  <div style="margin-top: 20px;">
+    <p><strong>Follow Me On:</strong></p>
+    <div style="font-size: 18px; display: flex; justify-content: center; gap: 30px; margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/manudeep07" target="_blank" style="color: #0e76a8; text-decoration: none;">LinkedIn</a>
+      <a href="https://github.com/manudeep07" target="_blank" style="color: #333; text-decoration: none;">GitHub</a>
+      
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 My Portfolio. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
