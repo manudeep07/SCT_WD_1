@@ -4,19 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Home</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-  * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Navigation Menu Styles */
     nav {
       position: fixed;
       top: 0;
@@ -25,7 +22,6 @@
       transition: background-color 0.3s ease;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
     }
 
     nav.scrolled {
@@ -76,7 +72,19 @@
       transform: scale(1.05);
     }
 
-    /* Hero Section Styles */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger:hover {
+      transform: scale(1.2);
+    }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
       margin-top: 68px;
@@ -86,11 +94,9 @@
       text-align: center;
       color: #fff;
       background-image: url('lauren-mancke-aOC7TSLb1o8-unsplash.jpg');
-      background-size: cover;         /* Scale image to cover the entire container */
-      background-repeat: no-repeat;   /* Prevent image from repeating */
-      background-position: center;    /* Center the image */
-    
-      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .hero-content {
@@ -129,7 +135,6 @@
       transform: scale(1.1);
     }
 
-    /* Footer Styles */
     footer {
       background-color: #222831;
       color: #eeeeee;
@@ -164,14 +169,102 @@
     .footer-links li a:hover {
       text-decoration: underline;
     }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(34, 40, 49, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        z-index: 999;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+
+      .footer-content p {
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links li a {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-content {
+        padding: 20px;
+        transform: none;
+      }
+
+      .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation Menu -->
+
   <nav id="main-nav">
     <div class="nav-container">
       <a href="index.html" class="logo">My Portfolio</a>
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -180,7 +273,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Welcome to My Portfolio</h1>
@@ -189,7 +281,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <p>© 2025 My Portfolio. All rights reserved.</p>
@@ -202,7 +293,7 @@
   </footer>
 
   <script>
-    // Scroll effect for navigation
+    // Scroll effect
     window.addEventListener('scroll', function () {
       const nav = document.getElementById('main-nav');
       if (window.scrollY > 50) {
@@ -210,6 +301,14 @@
       } else {
         nav.classList.remove('scrolled');
       }
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
     });
   </script>
 </body>

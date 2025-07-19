@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-    <style>
-       * {
+  <style>
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Navigation Menu Styles */
     nav {
       position: fixed;
       top: 0;
@@ -75,67 +72,136 @@
       transform: scale(1.05);
     }
 
-        .content {
-            max-width: 1200px;
-            margin: 100px auto;
-            padding: 20px;
-            text-align: center;
-            min-height: 80vh;
-        }
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-        .content h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #222831;
-        }
+    .hamburger:hover {
+      transform: scale(1.2);
+    }
 
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #393e46;
-        }
+    .content {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+      min-height: 80vh;
+    }
 
-        footer {
-            background-color: #222831;
-            color: #eeeeee;
-            padding: 20px;
-            text-align: center;
-        }
+    .content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222831;
+    }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #393e46;
+    }
 
-        .footer-content p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+    footer {
+      background-color: #222831;
+      color: #eeeeee;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .footer-links li a {
-            color: #00adb5;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    .footer-content p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
 
-        .footer-links li a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links li a {
+      color: #00adb5;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(34, 40, 49, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        z-index: 999;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+      }
+
+      .content h2 {
+        font-size: 28px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <nav id="main-nav">
+  <nav id="main-nav">
     <div class="nav-container">
       <a href="index.html" class="logo">My Portfolio</a>
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -144,33 +210,40 @@
     </div>
   </nav>
 
+  <section class="content">
+    <h2>About Me</h2>
+    <p>I'm a passionate developer and designer focused on building meaningful and elegant digital solutions. Explore my work and background to know more!</p>
+  </section>
 
-    <section class="content">
-        <h2>About Me</h2>
-        <p>I'm a passionate developer and designer focused on building meaningful and elegant digital solutions. Explore my work and background to know more!</p>
-    </section>
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 My Portfolio. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 My Portfolio. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </div>
-    </footer>
+  <script>
+    // Scroll effect
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
 
-    <script>
-        window.addEventListener('scroll', function () {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-    </script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
